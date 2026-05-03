@@ -125,7 +125,7 @@ class SpacemouseKeys(Module):
             self._task.restart()
 
     def _on_release(self, key, keyboard, *args, **kwargs):
-        self._movement &= ~key.mask
+        self._movement &= ~key.code
         if not self._movement:
             cancel_task(self._task)
             self._move_step = 0
